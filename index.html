@@ -12,18 +12,17 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/style.css">
 
-    <style>
-        .draggable {
-            width: 50%;
-            height: 50%;
-            object-fit: contain;
-        }
-    </style>
 
     <script>
         $(function() {
             $(".draggable").draggable();
         });
+    </script>
+    <script>
+        function myFunction() {
+            var img = document.getElementById("image");
+            img.setAttribute("class", "rotated-image");
+        }
     </script>
 </head>
 
