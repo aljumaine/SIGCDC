@@ -1,0 +1,764 @@
+                                .draggable {
+                                width: 40%;
+                                height: 40%;
+                                object-fit: contain;
+                            }
+                            
+                            .btn {
+                                display: inline-block;
+                                padding: 6px 12px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 1.42857143;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                -ms-touch-action: manipulation;
+                                touch-action: manipulation;
+                                cursor: pointer;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                background-image: none;
+                                border: 1px solid transparent;
+                                border-radius: 4px;
+                            }
+                            
+                            .btn-default {
+                                color: #333;
+                                background-color: #fff;
+                                border-color: #ccc;
+                            }
+                            
+                            .rotated-image {
+                                -webkit-transform: rotate(20deg);
+                                transform: rotate(20deg)
+                            }
+                            
+                            .parent {
+                                display: grid;
+                                grid-template-columns: repeat(5, 1fr);
+                                grid-template-rows: repeat(5, 1fr);
+                                grid-column-gap: 0px;
+                                grid-row-gap: 0px;
+                            }
+                            
+                            .parent {
+                                display: grid;
+                                grid-template-columns: repeat(5, 1fr);
+                                grid-template-rows: repeat(5, 1fr);
+                                grid-column-gap: 0px;
+                                grid-row-gap: 0px;
+                            }
+                            
+                            .div1 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div2 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div3 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div4 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div5 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div6 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div7 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div8 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div9 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div10 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div11 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div12 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div13 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div14 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div15 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div16 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div17 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div18 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div19 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div20 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div21 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div22 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div23 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div24 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div25 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div26 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div27 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div28 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div29 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div30 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div31 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div32 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div33 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div34 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div35 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div36 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div37 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div38 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div39 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div40 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div41 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div42 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div43 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div44 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div45 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div46 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div47 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div48 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div49 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div50 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div51 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div52 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div53 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div54 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div55 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div56 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div57 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div58 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div59 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div60 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div61 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div62 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div63 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div64 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div65 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div66 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div67 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div68 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div69 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div70 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div71 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div72 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div73 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div74 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div75 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div76 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div77 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div78 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div79 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div80 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div81 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div82 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div83 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div84 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div85 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div86 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div87 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div88 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div89 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div90 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div91 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div92 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div93 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div94 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div95 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div96 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div97 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div98 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div99 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div100 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div101 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div102 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div103 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div104 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div105 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div106 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div107 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div108 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div109 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div110 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div111 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div112 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div113 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div114 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div115 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div116 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div117 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div118 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div119 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div120 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div121 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div122 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div123 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div124 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div125 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div126 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div127 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div128 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div129 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div130 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div131 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div132 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div133 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div134 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div135 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div136 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div137 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div138 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div139 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div140 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div141 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div142 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div143 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div144 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div145 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div146 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div147 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div148 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div149 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div150 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            .div151 {
+                                grid-area: 1 / 1 / 2 / 2;
+                            }
+                            
+                            .div152 {
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            
+                            .div153 {
+                                grid-area: 1 / 3 / 2 / 4;
+                            }
+                            
+                            .div154 {
+                                grid-area: 1 / 4 / 2 / 5;
+                            }
+                            
+                            .div155 {
+                                grid-area: 1 / 5 / 2 / 6;
+                            }
+                            
+                            .div156 {
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                            
+                            .div157 {
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            
+                            .div158 {
+                                grid-area: 2 / 3 / 3 / 4;
+                            }
+                            
+                            .div159 {
+                                grid-area: 2 / 4 / 3 / 5;
+                            }
+                            
+                            .div160 {
+                                grid-area: 2 / 5 / 3 / 6;
+                            }
+                            
+                            .div161 {
+                                grid-area: 3 / 1 / 4 / 2;
+                            }
+                            
+                            .div162 {
+                                grid-area: 3 / 2 / 4 / 3;
+                            }
+                            
+                            .div163 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div164 {
+                                grid-area: 3 / 3 / 4 / 4;
+                            }
+                            
+                            .div165 {
+                                grid-area: 3 / 4 / 4 / 5;
+                            }
+                            
+                            .div166 {
+                                grid-area: 3 / 5 / 4 / 6;
+                            }
+                            
+                            .div167 {
+                                grid-area: 4 / 1 / 5 / 2;
+                            }
+                            
+                            .div168 {
+                                grid-area: 4 / 2 / 5 / 3;
+                            }
+                            
+                            .div169 {
+                                grid-area: 4 / 3 / 5 / 4;
+                            }
+                            
+                            .div170 {
+                                grid-area: 4 / 4 / 5 / 5;
+                            }
+                            
+                            .div171 {
+                                grid-area: 4 / 5 / 5 / 6;
+                            }
+                            
+                            .div172 {
+                                grid-area: 5 / 1 / 6 / 2;
+                            }
+                            
+                            .div173 {
+                                grid-area: 5 / 2 / 6 / 3;
+                            }
+                            
+                            .div174 {
+                                grid-area: 5 / 3 / 6 / 4;
+                            }
+                            
+                            .div175 {
+                                grid-area: 5 / 4 / 6 / 5;
+                            }
+                            
+                            .div176 {
+                                grid-area: 5 / 5 / 6 / 6;
+                            }
+                            
+                            @media screen and (max-width: 600px) {
+                                .column.side,
+                                .column.middle {
+                                    width: 100%;
+                                }
