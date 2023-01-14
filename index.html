@@ -181,6 +181,7 @@
     </script> -->
 
     <!-- updated code for the main page zoom.  -->
+
     <script>
         $(function() {
             var zoom = localStorage.getItem("zoom") || 1;
@@ -206,6 +207,14 @@
                     $("#zoom-slider").show();
                 }
             });
+        });
+    </script>
+
+    <script>
+        $(document).click(function(event) {
+            if (!$(event.target).closest('#zoom-button').length && !$(event.target).closest('#zoom-slider-container').length) {
+                // hide other elements
+            }
         });
     </script>
 </head>
