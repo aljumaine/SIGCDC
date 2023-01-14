@@ -83,13 +83,142 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function() {
+            // Add click event to each image
+            $('.my-image').on("click", function(e) {
+                var $img = $(this);
+                var offset = $img.offset();
+                var current_degree = $img.data("degree") || localStorage.getItem("degree_" + $img.attr("id")) || 0;
+                var current_zoom = $img.data("zoom") || localStorage.getItem("zoom_" + $img.attr("id")) || 100;
+
+                // Add zoom slider
+                $("#zoom-slider").css({
+                    width: "20%",
+                    top: offset.top - $img.height() - $("#zoom-slider").height() - 20,
+                    left: offset.left + $img.width() + 20
+                });
+                $("#zoom-slider").slider({
+                    min: 40,
+                    max: 500,
+                    value: current_zoom,
+                    slide: function(event, ui) {
+                        var zoom = ui.value;
+                        $img.css({
+                            'transform': 'scale(' + zoom / 100 + ')'
+                        });
+                        $img.data("zoom", zoom);
+                        localStorage.setItem("zoom_" + $img.attr("id"), zoom);
+                    }
+                });
+                $("#zoom-slider").show();
+
+                // Add rotation slider
+                $("#rotation-slider").css({
+                    width: "20%",
+                    top: offset.top - $img.height() - $("#rotation-slider").height() - 20,
+                    left: offset.left
+                });
+                $("#rotation-slider").slider({
+                    min: 0,
+                    max: 360,
+                    value: current_degree,
+                    slide: function(event, ui) {
+                        var degree = ui.value;
+                        $img.css({
+                            'transform': 'rotate(' + degree + 'deg) scale(' + current_zoom / 100 + ')'
+                        });
+                        $img.data("degree", degree);
+                        localStorage.setItem("degree_" + $img.attr("id"), degree);
+                        $('.degree-label').text(degree + "°");
+                    }
+                });
+                $('.degree-label').css({
+                    top: offset.top - $img.height() - $('.degree-label').height() - 45,
+                    left: offset.left
+                });
+                $("#rotation-slider").show();
+                $('.degree-label').show();
+            });
+
+            $(document).click(function() {
+                if (!$(event.target).closest('.my-image').length) {
+                    $("#rotation-slider").hide();
+                    $('.degree-label').hide();
+                    $("#zoom-slider").hide();
+                }
+            });
+        });
+    </script>
+
+    <!-- Code for adding a page zoom in and out 500% zoomed in and 40% zoomed out  -->
+
+    <!-- This code adds a button with the id "zoom-button" and a div with the id "zoom-slider" to your HTML. When the "zoom-button" is clicked, the "zoom-slider" will appear on the page. The slider is set to have a minimum value of 50, a maximum value of 500, and an initial value of 100. The slide function is used to update the zoom of the entire body element. The zoom property is set to the value of the slider. The last part of the code is used to hide the zoom slider when a user clicks outside of the "zoom-button" element. -->
+    <!-- <script>
+        $(document).ready(function() {
+            $("#zoom-button").click(function() {
+                $("#zoom-slider").show();
+            });
+
+            $("#zoom-slider").slider({
+                min: 50,
+                max: 500,
+                value: 100,
+                slide: function(event, ui) {
+                    var zoom = ui.value;
+                    $("body").css({
+                        'zoom': zoom + '%'
+                    });
+                }
+            });
+
+            $(document).click(function() {
+                if (!$(event.target).closest('#zoom-button').length) {
+                    $("#zoom-slider").hide();
+                }
+            });
+        });
+    </script> -->
+
+    <!-- updated code for the main page zoom.  -->
+    <script>
+        $(function() {
+            var zoom = localStorage.getItem("zoom") || 1;
+            $("body").css("zoom", zoom);
+
+            $("#zoom-slider").slider({
+                min: 0.5,
+                max: 5,
+                value: zoom,
+                step: 0.01,
+                slide: function(event, ui) {
+                    $("body").css("zoom", ui.value);
+                    localStorage.setItem("zoom", ui.value);
+                }
+            });
+
+            $("#zoom-button").click(function() {
+                $("#zoom-slider").show();
+            });
+
+            $(document).click(function(event) {
+                if (!$(event.target).closest('#zoom-slider, #zoom-button').length) {
+                    $("#zoom-slider").show();
+                }
+            });
+        });
     </script>
 </head>
 
 <body>
     <button id="screenshot-button">Take Screenshot</button>
-    <canvas id="screenshot-canvas"></canvas>
+    <button id="zoom-button">Zoom</button>
+    <div id="zoom-slider"></div>
     <div id="rotation-slider"></div>
+    <div class="zoom-level-label"></div>
+
+    <canvas id="screenshot-canvas"></canvas>
+
 
     <div class=" parent ">
         <div class="draggable div1 " class="ui-widget-content ">
