@@ -24,7 +24,7 @@
             $('.my-image').on("click", function(e) {
                 var $img = $(this);
                 var offset = $img.offset();
-                var current_degree = $img.data("degree") || 0;
+                var current_degree = $img.data("degree") || localStorage.getItem("degree_" + $img.attr("id")) || 0;
                 $("#rotation-slider").css({
                     width: "20%",
                     top: offset.top - $img.height() - $("#rotation-slider").height() - 20,
@@ -40,6 +40,7 @@
                             'transform': 'rotate(' + degree + 'deg)'
                         });
                         $img.data("degree", degree);
+                        localStorage.setItem("degree_" + $img.attr("id"), degree);
                         $('.degree-label').text(degree + "°");
                     }
                 });
@@ -58,6 +59,8 @@
                 }
             });
         });
+    </script>
+
     </script>
 </head>
 
