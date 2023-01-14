@@ -12,159 +12,167 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/style.css">
 
-
+    <!-- Code for clicking and dragging around an artifact -->
     <script>
         $(function() {
             $(".draggable").draggable();
         });
     </script>
-    <script>
-        function myFunction() {
-            var img = document.getElementById("image");
-            img.setAttribute("class", "rotated-image");
-        }
-    </script>
 
-    <!-- <img id="my-image" src="your-image-source.jpg" alt="image">
-
+    <!-- Code for clicking to rotate an iamge by 5 degrees per click.  -->
     <script>
         $(document).ready(function() {
             var degree = 0;
-            $("#my-image").click(function() {
-                degree += 90;
+            $(".my-image").click(function() {
+                degree += 5;
                 $(this).css({
                     'transform': 'rotate(' + degree + 'deg)'
                 });
             });
         });
-    </script> -->
+    </script>
 
+    <!-- Code for taking a screenshot of the entire page. -->
+    <script>
+        var screenshotCanvas = document.getElementById("screenshot-canvas");
+        var screenshotContext = screenshotCanvas.getContext("2d");
+        var screenshotLink = document.createElement("a");
+        screenshotLink.download = "screenshot.png";
+        screenshotLink.href = screenshotCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+
+        $("#screenshot-button").click(function() {
+            screenshotContext.drawImage(document.body, 0, 0);
+            screenshotLink.href = screenshotCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            screenshotLink.click();
+        });
+    </script>
 </head>
 
 <body>
     <div>
-        <button type="button" class="btn btn-default">Click to take a screenshot!</button>
+        <button id="screenshot-button">Take Screenshot</button>
+        <canvas id="screenshot-canvas"></canvas>
     </div>
 
     <div class="parent">
         <div class="draggable div1" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7664_09(S2012.9.470.png">
+            <img class="my-image" src="BoneFS_FS-7664_09(S2012.9.470.png">
         </div>
 
         <div class="draggable div2" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_02(S2012.9.446.png">
+            <img class="my-image" src="BoneFS_FS-7864_02(S2012.9.446.png">
         </div>
 
         <div class="draggable div3" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_03(S2012.9.447.png">
+            <img class="my-image" src="BoneFS_FS-7864_03(S2012.9.447.png">
         </div>
 
         <div class="draggable div4" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_04(S2012.9.448.png">
+            <img class="my-image" src="BoneFS_FS-7864_04(S2012.9.448.png">
         </div>
 
         <div class="draggable div5" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_05(S2012.9.449.png">
+            <img class="my-image" id="my-image" src="BoneFS_FS-7864_05(S2012.9.449.png">
         </div>
 
         <div class="draggable div6" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_07(S2012.9.451).png">
+            <img class="my-image" src="BoneFS_FS-7864_07(S2012.9.451).png">
         </div>
 
         <div class="draggable div7" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_08S2012.9.452.png">
+            <img class="my-image" src="BoneFS_FS-7864_08S2012.9.452.png">
         </div>
 
         <div class="draggable div8" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_09(S2012.9.453.png">
+            <img class="my-image" src="BoneFS_FS-7864_09(S2012.9.453.png">
         </div>
 
         <div class="draggable div9" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_10(S2012.9.454.png">
+            <img class="my-image" src="BoneFS_FS-7864_10(S2012.9.454.png">
         </div>
 
         <div class="draggable div10" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_11(S2012.9.455.png">
+            <img class="my-image" src="BoneFS_FS-7864_11(S2012.9.455.png">
         </div>
 
         <div class="draggable div11" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_12(S2012.9.456.png">
+            <img class="my-image" src="BoneFS_FS-7864_12(S2012.9.456.png">
         </div>
 
         <div class="draggable div12" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_13(S2012.9.457.png">
+            <img class="my-image" src="BoneFS_FS-7864_13(S2012.9.457.png">
         </div>
 
         <div class="draggable div13" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_14(S2012.9.458).png">
+            <img class="my-image" src="BoneFS_FS-7864_14(S2012.9.458).png">
         </div>
 
         <div class="draggable div14" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_15(S2012.9.459).png">
+            <img class="my-image" src="BoneFS_FS-7864_15(S2012.9.459).png">
         </div>
 
         <div class="draggable div15" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_16(S2012.9.460).png">
+            <img class="my-image" src="BoneFS_FS-7864_16(S2012.9.460).png">
         </div>
 
         <div class="draggable div16" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_17(S2012.9.461.png">
+            <img class="my-image" src="BoneFS_FS-7864_17(S2012.9.461.png">
         </div>
 
         <div class="draggable div17" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_18(S2012.9.462).png">
+            <img class="my-image" src="BoneFS_FS-7864_18(S2012.9.462).png">
         </div>
 
         <div class="draggable div18" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_19(S2012.9.463).png">
+            <img class="my-image" src="BoneFS_FS-7864_19(S2012.9.463).png">
         </div>
 
         <div class="draggable div19" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_20(S2012.9.464).png">
+            <img class="my-image" src="BoneFS_FS-7864_20(S2012.9.464).png">
         </div>
 
         <div class="draggable div20" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_21(S2012.9.465).png">
+            <img class="my-image" src="BoneFS_FS-7864_21(S2012.9.465).png">
         </div>
 
         <div class="draggable div21" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_22(S2012.9.466).png">
+            <img class="my-image" src="BoneFS_FS-7864_22(S2012.9.466).png">
         </div>
 
         <div class="draggable div22" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_23(S2012.9.467).png">
+            <img class="my-image" src="BoneFS_FS-7864_23(S2012.9.467).png">
         </div>
 
         <div class="draggable div23" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_24(S2012.9.468).png">
+            <img class="my-image" src="BoneFS_FS-7864_24(S2012.9.468).png">
         </div>
 
         <div class="draggable div24" class="ui-widget-content">
             <p></p>
-            <img src="BoneFS_FS-7864_25(S2012.9.469).png">
+            <img class="my-image" src="BoneFS_FS-7864_25(S2012.9.469).png">
         </div>
 
     </div>
