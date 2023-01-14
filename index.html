@@ -31,28 +31,11 @@
             });
         });
     </script>
-
-    <!-- Code for taking a screenshot of the entire page. -->
-    <script>
-        var screenshotCanvas = document.getElementById("screenshot-canvas");
-        var screenshotContext = screenshotCanvas.getContext("2d");
-        var screenshotLink = document.createElement("a");
-        screenshotLink.download = "screenshot.png";
-        screenshotLink.href = screenshotCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-
-        $("#screenshot-button").click(function() {
-            screenshotContext.drawImage(document.body, 0, 0);
-            screenshotLink.href = screenshotCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            screenshotLink.click();
-        });
-    </script>
 </head>
 
 <body>
-    <div>
-        <button id="screenshot-button">Take Screenshot</button>
-        <canvas id="screenshot-canvas">
-    </div>
+    <button id="screenshot-button">Take Screenshot</button>
+    <canvas id="screenshot-canvas"></canvas>
 
     <div class="parent">
         <div class="draggable div1" class="ui-widget-content">
@@ -175,8 +158,7 @@
             <img class="my-image" src="BoneFS_FS-7864_25(S2012.9.469).png">
         </div>
 
-        </div>
-    </canvas>
+    </div>
 </body>
 
 </html>
