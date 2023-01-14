@@ -21,10 +21,25 @@
 
     <script>
         $(document).ready(function() {
+            $('.my-image').each(function() {
+                var $img = $(this);
+                var current_degree = localStorage.getItem("degree_" + $img.attr("id")) || 0;
+                var current_position = localStorage.getItem("position_" + $img.attr("id")) || {
+                    left: 0,
+                    top: 0
+                };
+                $img.data("degree", current_degree);
+                $img.css({
+                    'transform': 'rotate(' + current_degree + 'deg)',
+                    'left': current_position.left + 'px',
+                    'top': current_position.top + 'px'
+                });
+            });
+
             $('.my-image').on("click", function(e) {
                 var $img = $(this);
                 var offset = $img.offset();
-                var current_degree = $img.data("degree") || localStorage.getItem("degree_" + $img.attr("id")) || 0;
+                var current_degree = $img.data("degree") || 0;
                 $("#rotation-slider").css({
                     width: "20%",
                     top: offset.top - $img.height() - $("#rotation-slider").height() - 20,
@@ -56,6 +71,13 @@
                 if (!$(event.target).closest('.my-image').length) {
                     $("#rotation-slider").hide();
                     $('.degree-label').hide();
+                }
+            });
+
+            $('.draggable').draggable({
+                stop: function(event, ui) {
+                    var $img = $(this).find('.my-image');
+                    localStorage.setItem("position_" + $img.attr("id"), ui.position);
                 }
             });
         });
