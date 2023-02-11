@@ -35,8 +35,6 @@ loadFileNames("images/content")
     console.error(error);
   });
 
-const emptyDisplyEl = () => displayEl.empty();
-
 // Load images on select
 selectFolderEl.on("change", (e) => {
   const folderDir = `images/content/${e.target.value}`;
@@ -47,9 +45,15 @@ selectFolderEl.on("change", (e) => {
       $(data).each((_, img) => {
         const imgContainer = $("<div class='draggable'></div>");
         const imgInContainer = imgContainer.append(
-          $("<img>", { class: "my-image", src: `${folderDir}/${img}` })
+          $("<img>", { class: "img", src: `${folderDir}/${img}` })
         );
         displayEl.append(imgInContainer);
+        $(".draggable").draggable({
+          drag: () => {
+            $("#rotation-slider").hide();
+            $('#degree-label').hide();
+          }
+        });
       });
     })
     .catch((error) => {
