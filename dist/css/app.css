@@ -230,18 +230,90 @@ input {
 /**
  * Helper mixins
 */
-/* Vendor */
+/* UI */
+.hidden {
+  display: none;
+}
+
+.scroll-none {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.modal-bg:not(.hidden) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal-bg .modal {
+  position: relative;
+  padding: 2rem;
+  margin: 2rem;
+  width: 100%;
+  background: grey;
+}
+.modal-bg .modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+}
+
 /* Components */
+#screenshot-modal #screenshot-container {
+  height: 75vh;
+  overflow-x: scroll;
+}
+
+.draggable {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 /* Browser specific styles */
 /**
  * Dirty hacks, yes internet explorer, we are looking at you
 */
-/* Demo Page styles */
 body {
   background: #333;
   color: #fff;
   font-family: "DINP-R", arial, serif;
   font-size: 1.3em;
+}
+
+header {
+  font-size: 2em;
+  color: #464646;
+  text-align: center;
+  padding: 60px 30px 30px;
+  background-size: 160px;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+}
+header small {
+  font-size: 0.5em;
+}
+header small img {
+  display: inline;
+  width: 20px;
 }
 
 main {
@@ -281,13 +353,6 @@ main video {
 }
 .badges h6 {
   font-size: 0.5em;
-}
-
-a {
-  color: #ec1f4e;
-}
-a:hover {
-  color: #000;
 }
 
 address {
@@ -360,74 +425,6 @@ footer a:hover {
   color: #fff;
 }
 
-.github-corner:hover .octo-arm {
-  -webkit-animation: octocat-wave 560ms ease-in-out;
-          animation: octocat-wave 560ms ease-in-out;
-}
-
-@-webkit-keyframes octocat-wave {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  20% {
-    -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  60% {
-    -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
-  }
-  80% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes octocat-wave {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  20% {
-    -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  60% {
-    -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
-  }
-  80% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    -webkit-animation: none;
-            animation: none;
-  }
-  .github-corner .octo-arm {
-    -webkit-animation: octocat-wave 560ms ease-in-out;
-            animation: octocat-wave 560ms ease-in-out;
-  }
-}
 @media only screen and (min-width: 1024px) {
   header,
   main {
@@ -441,11 +438,6 @@ footer a:hover {
   main h2 {
     font-size: 1.1em;
   }
-}
-.draggable {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 /*!********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/jquery-ui/themes/base/core.css ***!
