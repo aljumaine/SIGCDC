@@ -51,7 +51,9 @@ selectFolderEl.on("change", (e) => {
         $(".draggable").draggable({
           drag: () => {
             $("#rotation-slider").hide();
-            $('#degree-label').hide();
+            $('#rotation-label').hide();
+            $("#zoom-slider").hide();
+            $("#zoom-label").hide();
           }
         });
       });

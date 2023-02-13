@@ -14,5 +14,5 @@ import 'jquery-ui/ui/widgets/slider';
 
 /* Your JS Code goes here */
 import './load-imgs.js';
-import './rotate-imgs.js';
+import './imgs-interaction.js';
 import './screenshot.js';
