@@ -35,9 +35,3 @@ const createScreenshotImage = (canvas, linkEl) => {
   linkEl.download = "screenshot.png";
   linkEl.href = image;
 };
-
-// Todo
-// display a modal window
-// x button to hide modal window
-// add button to download image
-// https://www.sanwebe.com/snippet/downloading-canvas-as-image-dataurl-on-button-click
