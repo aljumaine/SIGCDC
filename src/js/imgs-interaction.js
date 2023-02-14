@@ -24,13 +24,31 @@ function waitForEl(selector) {
 
 $(document).on("change", displayEl, function () {
   waitForEl(".img").then(() => {
+
+    dragImg();
+
     const imgEl = $(".img");
     imgEl.on("click", (e) => {
+      
+      $(".highlight").removeClass('highlight');
+      $(e.target).parent().toggleClass('highlight');
       rotateImgSlider(e);
       zoomImgSlider(e);
     });
   });
 });
+
+const dragImg = () => {
+  $(".draggable").draggable({
+    drag: () => {
+      $("#rotation-slider").hide();
+      $('#rotation-label').hide();
+      $("#zoom-slider").hide();
+      $("#zoom-label").hide();
+      $(".highlight").removeClass('highlight');
+    }
+  });
+}
 
 const rotateImgSlider = (e) => {
   $("#rotation-slider").show();

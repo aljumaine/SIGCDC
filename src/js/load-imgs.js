@@ -48,14 +48,6 @@ selectFolderEl.on("change", (e) => {
           $("<img>", { class: "img", src: `${folderDir}/${img}` })
         );
         displayEl.append(imgInContainer);
-        $(".draggable").draggable({
-          drag: () => {
-            $("#rotation-slider").hide();
-            $('#rotation-label').hide();
-            $("#zoom-slider").hide();
-            $("#zoom-label").hide();
-          }
-        });
       });
     })
     .catch((error) => {
