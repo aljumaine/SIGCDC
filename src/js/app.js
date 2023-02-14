@@ -16,3 +16,4 @@ import 'jquery-ui/ui/widgets/slider';
 import './load-imgs.js';
 import './imgs-interaction.js';
 import './screenshot.js';
+import './zoom-canvas.js';
