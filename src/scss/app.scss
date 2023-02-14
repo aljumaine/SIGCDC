@@ -15,14 +15,15 @@
 /* Mixins, helpers and functions */
 @import 'base/mixins';
 
-/* Vendor */
+/* UI */
+@import 'ui';
 
 /* Components */
+@import 'screenshot';
+@import 'artifacts';
 
 /* Browser specific styles */
 @import 'dirty/hacks';
 
-/* Demo Page styles */
-@import 'demo';
 
-@import 'artifacts';
+@import 'demo';

@@ -5,6 +5,26 @@ body {
   font-size: 1.3em;
 }
 
+header {
+  font-size: 2em;
+  color: $caption-color;
+  text-align: center;
+  padding: 60px 30px 30px;
+  background-size: 160px;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+
+  small {
+    font-size: .5em;
+
+    img {
+      display: inline;
+      width: 20px;
+    }
+  }
+}
+
 main {
   background: $foreground-color;
   color: $black;
@@ -47,14 +67,6 @@ main {
 
   h6 {
     font-size: .5em;
-  }
-}
-
-a {
-  color: $link-color;
-
-  &:hover {
-    color: $black;
   }
 }
 
@@ -127,52 +139,6 @@ footer {
 
   a:hover {
     color: $white;
-  }
-}
-
-.github-corner:hover {
-  .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-
-@keyframes octocat-wave {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  20% {
-    transform: rotate(-25deg);
-  }
-
-  40% {
-    transform: rotate(10deg);
-  }
-
-  60% {
-    transform: rotate(-25deg);
-  }
-
-  80% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@media (max-width: 500px) {
-  .github-corner {
-    &:hover {
-      .octo-arm {
-        animation: none;
-      }
-    }
-
-    .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-    }
   }
 }
 
