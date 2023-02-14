@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SIGCDC</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Aljumaine Gayle">
+  </head>
+  <body>
+    <div id="root">
+
+      <nav>
+        <fieldset>
+          <label for="artifacts">Select a set</label>
+          <select name="artifacts" id="artifacts">
+            <option selected="selected" disabled>
+              Select a set
+            </option>
+          </select>
+        </fieldset>
+        <button id="screenshot-button">Take Screenshot</button>
+        <button id="zoom-button">Zoom</button>
+        <div id="zoom-slider"></div>
+        <div id="rotation-slider"></div>
+        <div class="zoom-level-label"></div>
+      </nav>
+      <canvas id="screenshot-canvas"></canvas>
+    </div>
+  </body>
+</html>
