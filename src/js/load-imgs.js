@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 const selectFolderEl = $("#artifacts");
+const displayEl = $("#display-artifacts");
 
 function loadFileNames(dir) {
   return new Promise((resolve, reject) => {
@@ -36,9 +37,24 @@ loadFileNames("images/content")
 
 // Load images on select
 selectFolderEl.on("change", (e) => {
-  loadFileNames(`images/content/${e.target.value}`)
+  const folderDir = `images/content/${e.target.value}`;
+  displayEl.html('');
+
+  loadFileNames(folderDir)
     .then((data) => {
-      console.log(data);
+      $(data).each((_, img) => {
+        const imgContainer = $("<div class='draggable'></div>");
+        const imgInContainer = imgContainer.append(
+          $("<img>", { class: "img", src: `${folderDir}/${img}` })
+        );
+        displayEl.append(imgInContainer);
+        $(".draggable").draggable({
+          drag: () => {
+            $("#rotation-slider").hide();
+            $('#degree-label').hide();
+          }
+        });
+      });
     })
     .catch((error) => {
       alert("Files could not be loaded. please check console for details");
