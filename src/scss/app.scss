@@ -15,6 +15,9 @@
 /* Mixins, helpers and functions */
 @import 'base/mixins';
 
+/* Layout */
+@import 'layout';
+
 /* UI */
 @import 'ui';
 
@@ -24,6 +27,3 @@
 
 /* Browser specific styles */
 @import 'dirty/hacks';
-
-
-@import 'demo';

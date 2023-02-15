@@ -1,0 +1,13 @@
+body {
+  background: $body-background-color;
+  color: $white;
+}
+
+#root {
+  display: flex;
+}
+
+nav {
+  min-width: 250px;
+  padding: 2rem 1rem;
+}

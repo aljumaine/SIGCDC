@@ -230,6 +230,23 @@ input {
 /**
  * Helper mixins
 */
+/* Layout */
+body {
+  background: #333;
+  color: #fff;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav {
+  min-width: 250px;
+  padding: 2rem 1rem;
+}
+
 /* UI */
 .hidden {
   display: none;
@@ -306,148 +323,6 @@ input {
 /**
  * Dirty hacks, yes internet explorer, we are looking at you
 */
-body {
-  background: #333;
-  color: #fff;
-  font-family: "DINP-R", arial, serif;
-  font-size: 1.3em;
-}
-
-header {
-  font-size: 2em;
-  color: #464646;
-  text-align: center;
-  padding: 60px 30px 30px;
-  background-size: 160px;
-  width: 90%;
-  margin: 20px auto;
-  position: relative;
-}
-header small {
-  font-size: 0.5em;
-}
-header small img {
-  display: inline;
-  width: 20px;
-}
-
-main {
-  background: #fff;
-  color: #000;
-  margin: 20px auto;
-  padding: 40px;
-  width: 90%;
-}
-main h1 {
-  font-size: 2em;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center;
-}
-main h2 {
-  font-weight: bold;
-  font-size: 1.5em;
-  text-align: center;
-  padding: 20px;
-}
-main h3 {
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-}
-main video {
-  margin: 0 auto;
-  display: block;
-}
-
-.badges {
-  line-height: 0.5em;
-}
-.badges img {
-  display: inline;
-}
-.badges h6 {
-  font-size: 0.5em;
-}
-
-address {
-  color: #999;
-}
-
-pre {
-  margin: 10px;
-  padding: 20px;
-}
-pre code {
-  display: block;
-  background: #333;
-  color: #fff;
-  padding: 10px;
-  border-left: 6px solid #ec1f4e;
-}
-
-.logo {
-  margin: 0 auto;
-  display: block;
-}
-
-ul {
-  list-style-type: square;
-  list-style-position: inside;
-}
-
-ol {
-  list-style-type: decimal;
-  list-style-position: inside;
-}
-
-ul ul,
-ol ul {
-  list-style-type: circle;
-  list-style-position: inside;
-  margin-left: 15px;
-}
-
-ol ol,
-ul ol {
-  list-style-type: lower-latin;
-  list-style-position: inside;
-  margin-left: 15px;
-}
-
-blockquote {
-  background: #f1f1f1;
-  border-left: 4px solid #ec1f4e;
-  border-radius: 3px;
-  margin: 10px 0;
-  padding: 10px 10px 10px 20px;
-}
-
-code {
-  font-family: Consolas, "courier new";
-  color: #ec1f4e;
-  background-color: #f1f1f1;
-  padding: 2px;
-  font-size: 1em;
-  border-radius: 3px;
-}
-
-footer {
-  text-align: center;
-  padding-bottom: 20px;
-}
-footer a:hover {
-  color: #fff;
-}
-
-@media only screen and (max-width: 1023px) {
-  main h1 {
-    font-size: 1.3em;
-  }
-  main h2 {
-    font-size: 1.1em;
-  }
-}
 /*!********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/jquery-ui/themes/base/core.css ***!
   \********************************************************************************************************************************************************************************/
