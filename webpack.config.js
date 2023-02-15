@@ -4,6 +4,7 @@
 
 const path = require("path");
 const fs = require("fs");
+const Dotenv = require("dotenv-webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
@@ -115,6 +116,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
     }),
