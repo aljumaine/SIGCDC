@@ -1,0 +1,16 @@
+#root {
+  display: flex;
+}
+
+nav {
+  position: fixed;
+  min-width: 250px;
+  padding: 2rem 0;
+  height: 100vh;
+}
+
+main {
+  overflow-x: hidden;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+}

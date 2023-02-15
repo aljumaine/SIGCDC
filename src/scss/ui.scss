@@ -1,3 +1,9 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: $body-background-color;
+  color: $white;
+}
+
 .hidden {
   display: none;
 }
@@ -38,5 +44,32 @@
 .btn {
   &-sm {
     padding: 0.25rem 0.5rem;
+  }
+}
+
+nav {
+  background-color: $nav-background-color;
+  section,
+  .controls {
+    margin: 1rem auto;
+  }
+  fieldset.select {
+    padding: 0 1rem;
+  }
+  section {
+    padding: 1rem;
+    border-top: 1px solid $black;
+  }
+}
+
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  div {
+    width: 75%;
+  }
+  label {
+    margin-left: 0.5rem;
   }
 }
