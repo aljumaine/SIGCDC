@@ -86,6 +86,7 @@
   },
   "target": "web",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "firebase": "^9.17.1",
     "fs-promise": "^2.0.3",
     "html2canvas": "^1.4.1",
