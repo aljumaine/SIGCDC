@@ -281,6 +281,14 @@ input {
   overflow-x: scroll;
 }
 
+#display-artifacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .draggable {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -432,12 +440,6 @@ footer a:hover {
   color: #fff;
 }
 
-@media only screen and (min-width: 1024px) {
-  header,
-  main {
-    width: 60%;
-  }
-}
 @media only screen and (max-width: 1023px) {
   main h1 {
     font-size: 1.3em;
