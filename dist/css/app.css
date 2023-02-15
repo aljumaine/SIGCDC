@@ -231,11 +231,6 @@ input {
  * Helper mixins
 */
 /* Layout */
-body {
-  background: #333;
-  color: #fff;
-}
-
 #root {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -243,11 +238,25 @@ body {
 }
 
 nav {
+  position: fixed;
   min-width: 250px;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+  height: 100vh;
+}
+
+main {
+  overflow-x: hidden;
+  width: calc(100% - 250px);
+  margin-left: 250px;
 }
 
 /* UI */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+}
+
 .hidden {
   display: none;
 }
@@ -290,6 +299,37 @@ nav {
 
 .btn-sm {
   padding: 0.25rem 0.5rem;
+}
+
+nav {
+  background-color: #252525;
+}
+nav section,
+nav .controls {
+  margin: 1rem auto;
+}
+nav fieldset.select {
+  padding: 0 1rem;
+}
+nav section {
+  padding: 1rem;
+  border-top: 1px solid #000;
+}
+
+.controls-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+.controls-wrapper div {
+  width: 75%;
+}
+.controls-wrapper label {
+  margin-left: 0.5rem;
 }
 
 /* Components */
