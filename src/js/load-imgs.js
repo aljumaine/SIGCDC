@@ -1,6 +1,9 @@
 import $ from "jquery";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
+
+import { dragImg, rotateImgSlider, zoomImgSlider } from "./utils/imgs-interaction";
+
 const selectFolderEl = $("#artifacts");
 const displayEl = $("#display-artifacts");
 
@@ -52,6 +55,16 @@ selectFolderEl.on("change", (e) => {
               $("<img>", { class: "img", src: url })
             );
             displayEl.append(imgInContainer);
+          })
+          .then(() => {
+            dragImg();
+
+            $(".img").on("click", (e) => {
+              $(".highlight").removeClass("highlight");
+              $(e.target).parent().toggleClass("highlight");
+              rotateImgSlider(e);
+              zoomImgSlider(e);
+            });
           })
           .catch((error) => {
             // Handle any errors
