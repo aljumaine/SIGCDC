@@ -1,1 +1,61 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><title>SIGCDC</title><meta name="description" content=""/><meta name="keywords" content=""/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="author" content="Aljumaine Gayle"/><link rel="icon" href="favicon.ico"><script defer="defer" src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head><body><div id="root"><nav><fieldset class="select"><label for="artifacts">Select a set</label> <select name="artifacts" id="artifacts"><option selected="selected" disabled="disabled">Select a set</option></select></fieldset><aside class="nav-wrapper"><section class="nav-global-controls"><h2>Global Controls</h2><button id="screenshot-button">Take Screenshot</button><fieldset class="controls"><h3>Canvas Zoom</h3><div class="controls-wrapper"><div class="global-zoom-slider"></div><label class="global-zoom-label"></label></div></fieldset></section><section class="nav-fragment-controls"><h2>Fragment Controls</h2><fieldset class="controls"><h3>Fragment Rotation</h3><div class="controls-wrapper"><div id="rotation-slider"></div><label id="rotation-label"></label></div></fieldset><fieldset class="controls"><h3>Fragment Zoom</h3><div class="controls-wrapper"><div id="zoom-slider"></div><label id="zoom-label"></label></div></fieldset></section></aside></nav><main><section id="display-artifacts"></section></main><section id="screenshot-modal" class="modal-bg hidden"><div class="modal"><button class="modal-close btn btn-sm">X</button> <a id="screenshot-download" class="btn btn-sm">Download Screenshot</a><div id="screenshot-container"></div></div></section></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIGCDC</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Aljumaine Gayle" />
+  <link rel="icon" href="favicon.ico"><script defer src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head>
+  <body>
+    <div id="root">
+      <nav>
+        <fieldset class="select">
+          <label for="artifacts">Select a set</label>
+          <select name="artifacts" id="artifacts">
+            <option selected="selected" disabled>Select a set</option>
+          </select>
+        </fieldset>
+        <aside class="nav-wrapper">
+          <section class="nav-global-controls">
+            <h2>Global Controls</h2>
+            <button id="screenshot-button">Take Screenshot</button>
+            <fieldset class="controls">
+              <h3>Canvas Zoom</h3>
+              <div class="controls-wrapper">
+                <div class="global-zoom-slider"></div>
+                <label class="global-zoom-label"></label>
+            </fieldset>
+          </section>
+          <section class="nav-fragment-controls">
+            <h2>Fragment Controls</h2>
+            <fieldset class="controls">
+              <h3>Fragment Rotation</h3>
+              <div class="controls-wrapper">
+                <div id="rotation-slider"></div>
+                <label id="rotation-label"></label>
+            </fieldset>
+            
+            <fieldset class="controls">
+              <h3>Fragment Zoom</h3>
+              <div class="controls-wrapper">
+                <div id="zoom-slider"></div>
+                <label id="zoom-label"></label>
+            </fieldset>
+          </section>
+        </aside>
+      </nav>
+      <main>
+        <section id="display-artifacts"></section>
+      </main>
+      <section id="screenshot-modal" class="modal-bg hidden">
+        <div class="modal">
+          <button class="modal-close btn btn-sm">X</button>
+          <a id="screenshot-download" class="btn btn-sm">Download Screenshot</a>
+          <div id="screenshot-container"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

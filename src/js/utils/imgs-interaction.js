@@ -33,7 +33,9 @@ export const zoomImgSlider = (e) => {
     value: current_zoom,
     slide: function (_, ui) {
       const zoom = ui.value;
-      const $draggableSelector = $(e.target).hasClass('img') ? $(e.target).parent() : $(e.target);
+      const $draggableSelector = $(e.target).hasClass("img")
+        ? $(e.target).parent()
+        : $(e.target);
       $draggableSelector.css({
         transform: "scale(" + zoom / 100 + ")",
       });
@@ -45,17 +47,33 @@ export const zoomImgSlider = (e) => {
 
 export const dragImg = () => {
   $(".draggable").draggable({
-    drag: () => {
+    start: (_, ui) => {
+      ui.position.left = 0;
+      ui.position.top = 0;
+    },
+    drag: (e, ui) => {
+      const displayTransformVal = Number($('#display-artifacts').css('transform').replace(/[matrix]|[(]|[)]/g, '').split(',')[0])
+      var zoomScale = displayTransformVal ? displayTransformVal : 1;
+
+      var changeLeft = ui.position.left - ui.originalPosition.left;
+      var newLeft = zoomScale < 1 ? e.clientX : ui.originalPosition.left + (changeLeft / zoomScale);
+
+      var changeTop = ui.position.top - ui.originalPosition.top;
+      var newTop = ui.originalPosition.top + (changeTop / zoomScale);
+
+      ui.position.left = newLeft;
+      ui.position.top = newTop;
+
       $("#rotation-slider").hide();
-      $('#rotation-label').hide();
+      $("#rotation-label").hide();
       $("#zoom-slider").hide();
       $("#zoom-label").hide();
-      $(".highlight").removeClass('highlight');
+      $(".highlight").removeClass("highlight");
     },
     stop: (e, _) => {
-      $(e.target).addClass('highlight');
+      $(e.target).addClass("highlight");
       rotateImgSlider(e);
       zoomImgSlider(e);
-    }
+    },
   });
-}
+};
