@@ -5,10 +5,11 @@
 
 .draggable {
   width: fit-content;
+  height: fit-content;
 
   &.highlight {
     &::before {
-      content: '';
+      content: "";
       border: 2px dotted red;
       position: absolute;
       width: 100%;
