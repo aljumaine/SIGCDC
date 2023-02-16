@@ -13,9 +13,7 @@ $("#screenshot-button").on("click", function () {
 
   const displayEl = document.getElementById("display-artifacts");
   html2canvas(displayEl, {
-    // allowTaint: true,
     useCORS: true,
-    // proxy: "http://localhost:8000/",
   }).then((canvas) => {
     screenshotContainerEl.innerHTML = "";
     canvas.id = "screenshot-canvas";
