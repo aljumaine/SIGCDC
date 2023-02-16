@@ -33,10 +33,11 @@ export const zoomImgSlider = (e) => {
     value: current_zoom,
     slide: function (_, ui) {
       const zoom = ui.value;
-      $(e.target).parent().css({
+      const $draggableSelector = $(e.target).hasClass('img') ? $(e.target).parent() : $(e.target);
+      $draggableSelector.css({
         transform: "scale(" + zoom / 100 + ")",
       });
-      $(e.target).data("zoom", zoom);
+      $draggableSelector.data("zoom", zoom);
       $("#zoom-label").text(zoom + "%");
     },
   });
