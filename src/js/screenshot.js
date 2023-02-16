@@ -1,16 +1,20 @@
 import $ from "jquery";
 import html2canvas from "html2canvas";
 
-const displayEl = document.getElementById("display-artifacts");
 const screenshotContainerEl = document.getElementById("screenshot-container");
 const screenshotDownloadEl = document.getElementById("screenshot-download");
 const $screenshotModal = $("#screenshot-modal");
-const $root = $("#root")
+const $root = $("#root");
 
 $("#screenshot-button").on("click", function () {
+  $(".highlight").removeClass("highlight");
+
   toggleScreenshotModal();
 
-  html2canvas(displayEl).then((canvas) => {
+  const displayEl = document.getElementById("display-artifacts");
+  html2canvas(displayEl, {
+    useCORS: true,
+  }).then((canvas) => {
     screenshotContainerEl.innerHTML = "";
     canvas.id = "screenshot-canvas";
     screenshotContainerEl.appendChild(canvas);
@@ -25,7 +29,9 @@ $(".modal-close").on("click", () => {
 const toggleScreenshotModal = () => {
   $screenshotModal.toggleClass("hidden");
 
-  !$screenshotModal.hasClass("hidden") ? $root.addClass('scroll-none') : $root.removeClass('scroll-none')
+  !$screenshotModal.hasClass("hidden")
+    ? $root.addClass("scroll-none")
+    : $root.removeClass("scroll-none");
 };
 
 const createScreenshotImage = (canvas, linkEl) => {

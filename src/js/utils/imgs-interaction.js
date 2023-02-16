@@ -33,7 +33,7 @@ export const zoomImgSlider = (e) => {
     value: current_zoom,
     slide: function (_, ui) {
       const zoom = ui.value;
-      $(e.target).css({
+      $(e.target).parent().css({
         transform: "scale(" + zoom / 100 + ")",
       });
       $(e.target).data("zoom", zoom);

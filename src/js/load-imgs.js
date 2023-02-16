@@ -2,7 +2,11 @@ import $ from "jquery";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
-import { dragImg, rotateImgSlider, zoomImgSlider } from "./utils/imgs-interaction";
+import {
+  dragImg,
+  rotateImgSlider,
+  zoomImgSlider,
+} from "./utils/imgs-interaction";
 
 const selectFolderEl = $("#artifacts");
 const displayEl = $("#display-artifacts");
@@ -50,9 +54,21 @@ selectFolderEl.on("change", (e) => {
         const imgRef = ref(storage, itemRef.fullPath);
         getDownloadURL(imgRef)
           .then((url) => {
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = "blob";
+            xhr.onload = (event) => {
+              const blob = xhr.response;
+            };
+            xhr.open("GET", url);
+            xhr.send();
+
             const imgContainer = $("<div class='draggable'></div>");
             const imgInContainer = imgContainer.append(
-              $("<img>", { class: "img", src: url })
+              $("<img>", {
+                class: "img",
+                src: url,
+                "cross-origin": "anonymous",
+              })
             );
             displayEl.append(imgInContainer);
           })
