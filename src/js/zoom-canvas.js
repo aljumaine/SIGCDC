@@ -1,14 +1,6 @@
 import $ from "jquery";
 
 const displayEl = $("#display-artifacts");
-const calculateWidth = (zoom) => {
-  if (zoom < 40) {
-    return ` calc(100% + ${zoom * 2}%)`;
-  } else if (zoom < 100) {
-    return `calc(100% + ${zoom}%)`;
-  }
-  return "100%";
-};
 var zoom = displayEl.data("zoom") || 100;
 $(".global-zoom-label").text(zoom + "%");
 $(".global-zoom-slider").slider({
@@ -18,12 +10,13 @@ $(".global-zoom-slider").slider({
   step: 0.01,
   slide: function (_, ui) {
     const zoom = ui.value;
-    displayEl.css({
-      transform: "scale(" + zoom / 100 + ")",
-      "transform-origin": "0px 0px",
-      width: calculateWidth(zoom),
+    const draggableEl = document.getElementsByClassName("draggable");
+    Array.from(draggableEl).forEach((el) => {
+      el.style.width = `calc(${el.dataset.imgOriginalWidth}px * ${zoom / 100})`;
+      el.style.height = `calc(${el.dataset.imgOriginalHeight}px * ${
+        zoom / 100
+      })`;
     });
-    displayEl.data("zoom", zoom);
     $(".global-zoom-label").text(zoom + "%");
   },
 });

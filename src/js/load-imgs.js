@@ -54,14 +54,6 @@ selectFolderEl.on("change", (e) => {
         const imgRef = ref(storage, itemRef.fullPath);
         getDownloadURL(imgRef)
           .then((url) => {
-            const xhr = new XMLHttpRequest();
-            xhr.responseType = "blob";
-            xhr.onload = (event) => {
-              const blob = xhr.response;
-            };
-            xhr.open("GET", url);
-            xhr.send();
-
             const imgContainer = $("<div class='draggable'></div>");
             const imgInContainer = imgContainer.append(
               $("<img>", {
@@ -73,8 +65,18 @@ selectFolderEl.on("change", (e) => {
             displayEl.append(imgInContainer);
           })
           .then(() => {
+            $("img").on("load", () => {
+              const draggableEl = document.getElementsByClassName("draggable");
+              Array.from(draggableEl).forEach((el) => {
+                const imgHeight = el.firstChild.naturalHeight;
+                const imgWidth = el.firstChild.naturalWidth;
+                el.setAttribute("data-img-original-height", imgHeight);
+                el.setAttribute("data-img-original-width", imgWidth);
+              });
+            });
+          })
+          .then(() => {
             dragImg();
-
             $(".img").on("click", (e) => {
               $(".highlight").removeClass("highlight");
               $(e.target).parent().toggleClass("highlight");
