@@ -10,7 +10,8 @@ nav {
 }
 
 main {
-  overflow-x: scroll;
+  height: 100vh;
   width: calc(100% - 250px);
+  overflow-x: scroll;
   margin-left: 250px;
 }
